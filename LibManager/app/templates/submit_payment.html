@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Submit Payment{% endblock %}
+
+{% block content %}
+<h1>Submit Payment</h1>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.student_id.label }} {{ form.student_id(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.amount.label }} {{ form.amount(class="form-control") }}
+    </div>
+    <button type="submit" class="btn btn-primary">Submit Payment</button>
+</form>
+{% endblock %}

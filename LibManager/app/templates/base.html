@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Tuition Management{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{ url_for('dashboard.index') }}">Tuition Management</a>
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="{{ url_for('dashboard.index') }}">Dashboard</a>
+            <a class="nav-item nav-link" href="{{ url_for('students.student_list') }}">Students</a>
+            <a class="nav-item nav-link" href="{{ url_for('shifts.seat_map') }}">Seat Map</a>
+            <a class="nav-item nav-link" href="{{ url_for('export.export_students') }}">Export Data</a>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

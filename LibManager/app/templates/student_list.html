@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Students{% endblock %}
+
+{% block content %}
+<h1>Students</h1>
+<a href="{{ url_for('students.new_student') }}" class="btn btn-primary mb-3">Add New Student</a>
+<input type="text" class="form-control mb-3" placeholder="Search by name" id="searchBar">
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Shift</th>
+            <th>Fees Due</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.name }}</td>
+            <td>{{ student.contact }}</td>
+            <td>{{ student.shift_id }}</td>
+            <td>₹{{ student.fees_due }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
